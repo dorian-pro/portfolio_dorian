@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Dorian Maréchal</title>
+
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+<body>
+
+<!-- LOADER start -->
+<div class="loader-start">
+    <div class="container">
+        <div class="loader-content"></div>
+        <div class="counter">0%</div>
+    </div>
+</div>
+<!-- FIN LOADER -->
+
+<!-- LOADER link section -->
+<div class="loader">
+
+</div>
+<!-- FIN LOADER -->
+
+<!--  HEADER  -->
+<!-- navbar -->
+<header>
+    <div class="logo">
+        <img src="./src/images/DM.svg" alt="Logo M retourner">
+    </div>
+    <button type="button" id="btn-mobile" class="icon nav-icon-1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#home" data-text="accueil" data-link="#home" class="nav-link">accueil</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" data-text="à propos" class="nav-link" data-link="#about">à propos</a>
+            </li>
+            <li class="nav-item">
+                <a href="#portfolio" data-text="portfolio" class="nav-link" data-link="#portfolio">portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" data-text="contact" class="nav-link" data-link="#contact">contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- fin navbar -->
+<!-- fin HEADER  -->
+
+<!--  main  -->
+<!-- section home -->
+<section id="home">
+    <div class="container">
+        <ul class="block-icon">
+            <li class="icon">
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li class="linkedin">
+                <a href="#">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="github">
+                <a href="#">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="block-title">
+            <span class="name"><span class="text-red">dorian</span> maréchal</span>
+            <h1 class="text-change">Je suis <span id="text-change" class="text-red"></span></h1>
+        </div>
+        <ul class="block-icon">
+            <li class="mail">
+                <a href="#">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </a>
+            </li>
+            <li class="phone">
+                <a href="#">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- fin section home -->
+<!-- section a propos -->
+<section id="about">
+    <div class="container">
+        <div class="about">
+            <div class="block-title">
+                <h2><span class="text-red">à</span> propos</h2>
+            </div>
+            <div class="about-content">
+                <div class="block-text">
+                    <h3>Je suis développeur web junior basé à <span class="text-red">Marseille</span>.</h3>
+                    <p>
+                        Mon parcours a débuté en autodidacte,
+                        mais j'ai également suivi une formation approfondie à l'IDEM Creative Art School,
+                        Je suis spécialisé à la fois dans le développement front-end et back-end,
+                        ce qui me permet de créer des expériences utilisateur dynamiques et fonctionnelles.
+                        <span class="thanks">
+                            Merci de visiter mon portfolio et j'espère avoir l'occasion de travailler avec vous bientôt !
+                        </span>
+                    </p>
+                    <div class="download">
+                        <button>Mon cv <span class="text-red-2"><i class="fa-solid fa-download"></i></span></button>
+                    </div>
+                </div>
+                <div class="block-image">
+                    <img src="./src/images/about.svg" alt="Image a remplacer">
+                </div>
+            </div>
+            <div class="objectif">
+                <h2><span class="text-red">Mes</span> objectif</h2>
+                <div class="block-card">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="formation-finish">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h3>projet professionnelle</h3>
+                            <p>Formation effectuer en préparation d'une licence concepteur web.</p>
+                            <p class="badge">Terminer le 28 juin 2023</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="formation-load">
+                                <div class="loader-format"></div>
+                            </div>
+                            <h3>licence concepteur web</h3>
+                            <p>Maîtrise du design et du développement web</p>
+                            <p class="badge">En cour</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="formation-load">
+                                <div class="loader-format"></div>
+                            </div>
+                            <h3>master gestion de projet</h3>
+                            <p>Expertise en gestion de projets web, coordination d'équipes et livraison réussie</p>
+                            <p class="badge">à venir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills">
+                <h2><span class="text-red">Mes</span> Compétence</h2>
+
+                <div class="skills-content">
+                    <div class="group-bar">
+                        <span class="label">HTML/CSS</span>
+                        <div class="progress-bar html"></div>
+                    </div>
+                    <div class="group-bar">
+                        <span class="label">Javascript</span>
+                        <div class="progress-bar js"></div>
+                    </div>
+                    <div class="group-bar">
+                        <span class="label">Jquery</span>
+                        <div class="progress-bar jquery"></div>
+                    </div>
+                    <div class="group-bar">
+                        <span class="label">Php</span>
+                        <div class="progress-bar php"></div>
+                    </div>
+                    <div class="group-bar">
+                        <span class="label">Sql</span>
+                        <div class="progress-bar sql"></div>
+                    </div>
+                    <div class="group-bar">
+                        <span class="label">Symfony</span>
+                        <div class="progress-bar symfony"></div>
+                    </div>
+                    <div class="group-bar">
+                        <span class="label">Wordpress</span>
+                        <div class="progress-bar wordpress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- fin section a propos -->
+<!-- section portfolio -->
+<section id="portfolio">
+    <div class="container">
+        <div class="block-title">
+            <h2><span class="text-red">Mon</span> Portfolio</h2>
+            <span>quelques-uns de mes travaux</span>
+        </div>
+        <div class="portfolio-content">
+            <figure class="card">
+                <img src="./src/images/portfolio-first.jpg" alt="">
+
+                <div class="figure-body">
+                    <div class="card-title">
+                        <h3 class="text-red">Not annuaire</h3>
+                        <p>Création d'un back-office pour les instance de notaire</p>
+                    </div>
+                    <div class="block-badge">
+                        <div class="badge">Symfony</div>
+                        <div class="badge">Npm</div>
+                        <div class="badge">Bootstrap</div>
+                        <div class="badge">Sass</div>
+                        <div class="badge">Jquery</div>
+                    </div>
+                    <figcaption>
+                        Un back-office pour que les instance puissent avoir un gestion global sur les notaires correspondent a leur régions
+                    </figcaption>
+                    <div class="icon">
+                        <img src="./src/images/Globe-02.svg" alt="">
+                    </div>
+                    <div class="block-btn">
+                        <a class="btn">Y aller</a>
+                    </div>
+                </div>
+            </figure>
+            <figure class="card">
+                <img src="./src/images/portfolio-first.jpg" alt="">
+            
+                <div class="figure-body">
+                    <div class="card-title">
+                        <h3 class="text-red">Méca Forum</h3>
+                        <p>Forum pour les passioners de mécanique <span class="text-red">En cour</span></p>
+                    </div>
+                    <div class="block-badge">
+                        <div class="badge">Symfony</div>
+                        <div class="badge">Npm</div>
+                        <div class="badge">Sass</div>
+                        <div class="badge">Jquery</div>
+                    </div>
+                    <figcaption>
+                        Un forum pour les passionner de mécanique en tout genre, entraide, discussion, publication
+                    </figcaption>
+                    <div class="icon">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="block-btn">
+                        <a class="btn">Y aller</a>
+                    </div>
+                </div>
+            </figure>
+        </div>
+    </div>
+</section>
+<!-- fin section portfolio -->
+<!-- section contact -->
+<section id="contact">
+    <div class="container">
+        <div class="block-title">
+            <h2>Contactez-<span class="text-red">moi</span></h2>
+        </div>
+        <div class="contact-content">
+            <form class="form">
+                <h3>Envoyez-moi un message</h3>
+                <div class="block-input">
+                    <label for="name" class="d-none">Nom & Prénom</label>
+                    <input type="text" id="name" name="name" placeholder="Nom & Prénom">
+                </div>
+                <div class="block-input">
+                    <label for="email" class="d-none">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Adresse email">
+                </div>
+                <div class="block-input">
+                    <label for="subject" class="d-none">Sujet</label>
+                    <input type="text" id="subject" name="subject" placeholder="Sujet">
+                </div>
+                <div class="block-input">
+                    <label for="message" class="d-none">Message</label>
+                    <textarea id="message" name="message" placeholder="Message"></textarea>
+                </div>
+                <div class="block-btn">
+                    <button type="submit" class="btn">Envoyer</button>
+                </div>
+            </form>
+            <div class="contact-info">
+                <h3>informations de contact</h3>
+                <div class="block-text-icon">
+                    <div class="icon">
+                        <img src="./src/images/icon-name.png" alt="">
+                    </div>
+                    <div class="text">
+                        <span>Nom & Prénom</span>
+                        <span>Dorian Maréchal</span>
+                    </div>
+                </div>
+                <div class="block-text-icon">
+                    <div class="icon">
+                        <img src="./src/images/icon-location.png" alt="">
+                    </div>
+                    <div class="text">
+                        <span>Localisation</span>
+                        <span>Marseille, France</span>
+                    </div>
+                </div>
+                <div class="block-text-icon">
+                    <div class="icon">
+                        <img src="./src/images/icon-phone.png" alt="">
+                    </div>
+                    <div class="text">
+                        <span>Téléphone</span>
+                        <span>07.69.71.99.83</span>
+                    </div>
+                </div>
+                <div class="block-text-icon">
+                    <div class="icon">
+                        <img src="./src/images/icon-email.png" alt="">
+                    </div>
+                    <div class="text">
+                        <span>Email</span>
+                        <span>pro.dorianm@gmail.com</span>
+                    </div>
+                </div>
+                <div class="block-text-icon">
+                    <div class="icon">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="text">
+                        <span>Github</span>
+                        <span>https://github.com/dorian-pro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- fin section contact -->
+<!-- fin MAIN  -->
+<!-- FOOTER -->
+<footer></footer>
+<!-- fin FOOTER -->
+<script src="https://kit.fontawesome.com/63367d301d.js" crossorigin="anonymous"></script>
+<script src="./dist/main.js"></script>
+</body>
+</html>
