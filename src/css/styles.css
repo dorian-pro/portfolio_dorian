@@ -223,6 +223,16 @@ header .logo img{
     height: 60px;
 }
 
+@media  screen and (max-width: 500px){
+    header .logo{
+        display: none;
+    }
+
+    .nav-icon{
+        margin-left: auto;
+    }
+}
+
 /* btn mobile */
 .nav-icon{
     width: 30px;
@@ -484,6 +494,28 @@ section{
     font-weight: 500;
 }
 
+@media (max-width: 1025px){
+
+    #home .container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    #home .block-icon {
+        width: 100%;
+        padding: 10px;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
+
 /* section about */
 #about{
     overflow: scroll;
@@ -733,17 +765,15 @@ section{
 .skills-content{
     height: auto;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     margin: 25px auto 81px;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
 .group-bar{
     height: auto;
-    max-width: 860px;
-    min-width: 500px;
-    width: 100%;
+    width: 45%;
     position: relative;
     color: whitesmoke;
     padding: 1.5%;
@@ -834,6 +864,13 @@ section{
     content: "70%";
     width: 70%;
 }
+
+@media (max-width: 1025px) and (min-width: 551px){
+    .skill {
+        width: 40%;
+    }
+}
+
 
 /* section portfolio */
 #portfolio .container{
