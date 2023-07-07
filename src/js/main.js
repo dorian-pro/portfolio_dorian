@@ -75,8 +75,9 @@ function navbar() {
 
 
         $loader.addClass('active');
-        
+
         setTimeout(function () {
+            btnMobile.removeClass('show');
             switch (dataLink) {
                 case '#home':
                     home.fadeIn('100')
