@@ -32,12 +32,12 @@ a {
     text-decoration: none;
 }
 
-button, input {
+button, input, textarea {
     background: none;
     border: none;
 }
 
-::before, ::after {
+::before, ::after, :focus {
     outline: none;
 }
 
@@ -85,6 +85,10 @@ body {
 
 .block-title.show{
     z-index: 4;
+}
+
+.d-none{
+    display: none;
 }
 
 /*---------  scroll-bar   ---------*/
@@ -709,6 +713,7 @@ section{
     font-weight: 200;
     font-size: 32px;
     z-index: 3;
+    text-transform: capitalize;
 }
 
 .objectif .card p{
@@ -849,6 +854,14 @@ section{
     font-weight: 400;
 }
 
+#portfolio .block-title span.traveau{
+    opacity: .8;
+    font-size: 20px;
+    font-family: var(--raleway);
+    padding: 15px 8px 8px;
+    font-weight: 400;
+}
+
 #portfolio .portfolio-content{
     width: 100%;
     display: flex;
@@ -929,7 +942,6 @@ section{
 .figure-body .btn{
     font-size: 16px;
     opacity: .8;
-    font-weight: 200;
     padding: 10px 20px;
     background: transparent;
     color: #c70039;
@@ -969,4 +981,153 @@ section{
 .figure-body .btn:hover{
     opacity: 1;
     color: whitesmoke;
+}
+
+/* section contact */
+#contact .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#contact .contact-content{
+    width: 90%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact form{
+    height: 600px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form h3{
+    font-size: 24px;
+    font-weight: 400;
+    color: whitesmoke;
+    padding: 0 20px 20px;
+}
+
+form .block-input{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form input{
+    width: 100%;
+    padding: 10px 20px;
+    margin: 14px;
+    border-radius: 8px;
+    background: #050505;
+    color: whitesmoke;
+    font-size: 18px;
+}
+
+form textarea{
+    width: 100%;
+    padding: 10px 20px;
+    margin: 15px;
+    height: 150px;
+    border-radius: 8px;
+    background: #050505;
+    color: whitesmoke;
+    font-size: 18px;
+    resize: none;
+}
+
+form .btn{
+    padding: 8px 24px;
+    font-size: 20px;
+    color: whitesmoke;
+    background: #BB0035;
+    opacity: .8;
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all .4s ease;
+}
+
+form .btn:hover{
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+
+
+#contact .contact-info{
+    width: 40%;
+    height: 600px;
+    background: no-repeat center/cover url(../images/image-about.svg);
+    border-radius: 26px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#contact .contact-info::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #101010;
+    opacity: .7;
+    pointer-events: none;
+}
+
+.contact-info h3{
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+    font-weight: 400;
+    color: whitesmoke;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-info .block-text-icon{
+    height: auto;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    margin-left: 100px;
+}
+
+.block-text-icon .text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: whitesmoke;
+    padding: 15px;
+}
+
+.text span:first-child{
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.text span:last-child{
+    font-size: 14px;
+    opacity: 0.7;
 }
