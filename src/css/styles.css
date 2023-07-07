@@ -69,6 +69,7 @@ body {
     width: 4px;
     color: var(--red-primary);
     transition: all .4s ease;
+    z-index: 1000;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -188,7 +189,7 @@ header .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 3;
+    z-index: 6;
 }
 
 header .logo img{
@@ -201,10 +202,9 @@ header .logo img{
     height: 30px;
     position: relative;
     transition: .1s;
-    margin: 10px 10px;
     cursor: pointer;
     display: inline-block;
-    z-index: 3;
+    z-index: 6;
 }
 .nav-icon span{
     width: 5px;
@@ -292,6 +292,7 @@ header .logo img{
     right: -100%;
     border-bottom-left-radius: 50%;
     transition: all 800ms ease;
+    z-index: 5;
 }
 
 .navbar .nav-list{
@@ -473,9 +474,13 @@ section{
     padding: 60px 10px 30px;
     font-weight: 900;
     text-transform: capitalize;
-    z-index: 4;
+    z-index: 2;
     position: relative;
     display: flex;
+}
+
+#about .block-title.show{
+   z-index: 4;
 }
 
 .about{
@@ -493,7 +498,7 @@ section{
     height: 80%;
     padding-left: 50px;
     padding-right: 50px;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 
 .about .block-text{
@@ -502,6 +507,7 @@ section{
     justify-content: center;
     flex-direction: column;
     width: 50%;
+    gap: 20px;
 }
 
 .about .block-text h3{
@@ -518,26 +524,194 @@ section{
     font-weight: 200;
 }
 .about .img{
-    width: 40%;
+    min-width: 40%;
     height: 550px;
-    padding: 30px;
     border-radius: 40px;
-    background: no-repeat center/cover url("../images/image-about.svg");
+    background: no-repeat center/cover url("../images/about.svg");
 }
-@media screen and (max-width: 1200px) {
-    .about{
-        height: 100%;
+
+.about .download{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.about .download button{
+    padding: 25px 35px;
+    color: whitesmoke;
+    outline: none;
+    font-size: 30px;
+    font-family: var(--raleway);
+    border-radius: 4px;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    transition: all .4s ease;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.about .download button:hover{
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+    @media screen and (max-width: 1200px) {
+        .about{
+            height: 100%;
+        }
+
+        .about .img{
+            min-width: 80%;
+        }
+
+        .about .block-text{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
     }
 
-    .about .img{
-        display: none;
-    }
 
-    .about .block-text{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 100%;
-    }
+/* section objectif */
+.objectif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.objectif .block-card{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding: 2.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.objectif .card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.objectif .block-card .card{
+    height: 400px;
+    max-width: 500px;
+    margin: 1.5%;
+    width: 100%;
+    padding: 10px;
+    background-color: #191919;
+    display: inline-block;
+    box-shadow: 0 0 25px rgb(0,0,0,.05);
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: opacity 1.4s ease;
+}
+
+.objectif .block-card .card .formation{
+    z-index: 2;
+    position: relative;
+    border-radius: 30%;
+    padding: 10px;
+    /* From https://css.glass */
+    background: rgba(255, 0, 0, 0.19);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.7px);
+    -webkit-backdrop-filter: blur(9.7px);
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    height: 120px;
+    display: flex;
+    transition: all .8s ease;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    margin: 20px auto;
+}
+
+.objectif .block-card .card .formation.finish{
+    background: rgba(0, 255, 42, 0.29);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.7px);
+    -webkit-backdrop-filter: blur(9.7px);
+    border: 1px solid rgba(0, 255, 42, 0.4);
+}
+
+.objectif .block-card .card:hover .formation{
+    box-shadow: 0 0 0 400px rgba(255, 0, 0, 0.39) ;
+}
+
+.objectif .block-card .card:hover .formation.finish{
+    box-shadow: 0 0 0 400px rgba(0, 255, 42, 0.39);
+}
+
+.objectif .block-card .card .formation i{
+    font-size: xxx-large;
+}
+
+.loader-card {
+    height: 15px;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.loader-card .circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: move 500ms linear 0ms infinite;
+    margin-right: 30px;
+}
+
+.loader-card .circle:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: grow 500ms linear 0ms infinite;
+}
+
+.loader-card .circle:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 0;
+    animation: grow 500ms linear 0s infinite reverse;
+}
+
+@keyframes grow {
+    from {transform: scale(0,0); opacity: 0;}
+    to {transform: scale(1,1); opacity: 1;}
+}
+
+@keyframes move {
+    from {transform: translateX(0px)}
+    to {transform: translateX(45px)}
+}
+
+.objectif .card h3{
+    padding: 10px;
+    margin: 5px;
+    font-weight: 200;
+    font-size: 32px;
+    z-index: 3;
+}
+
+.objectif .card p{
+    padding: 10px;
+    font-weight: 200;
+    font-size: 18px;
+    z-index: 5;
 }

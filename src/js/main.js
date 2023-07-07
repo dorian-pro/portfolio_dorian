@@ -58,26 +58,35 @@ function navbar() {
     const about     = $('#about');
     const contact   = $('#contact');
     const portfolio = $('#portfolio');
+    const blockTitle = $("#about .block-title");
 
     $('section').hide();
     home.show();
 
+    // if (header.hasClass('show')){
+    //
+    // } else if (!header.hasClass('show')) {
+    //     blockTitle.addClass('show')
+    // } else {
+    //
+    // }
+    blockTitle.addClass('show')
     btnMobile.on('click', function () {
         $(this).toggleClass('show')
         navbar.toggleClass('show');
         header.toggleClass('show');
+        blockTitle.toggleClass('show')
     })
 
     $('.nav-link').on('click', function(e) {
         let dataLink = $(this).data('link')
         let $loader  = $('.loader');
 
-
-
         $loader.addClass('active');
 
         setTimeout(function () {
             btnMobile.removeClass('show');
+            blockTitle.addClass('show')
             switch (dataLink) {
                 case '#home':
                     home.fadeIn('100')
