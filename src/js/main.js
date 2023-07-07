@@ -14,12 +14,12 @@ $(function () {
 
 function counter() {
     // fonction de compteur
-    const counterElement = $('.counter');
+    const counterElement       = $('.counter');
     const targetValue = 100;
-    const duration = 1500;
+    const duration    = 1500;
 
-    let startValue = 0;
-    let startTime = null;
+    let startValue    = 0;
+    let startTime         = null;
 
     function updateCounter(timestamp) {
         if (!startTime) {
@@ -50,13 +50,13 @@ function counter() {
 }
 
 function navbar() {
-    let navbar = $('#navbar');
-    let header = $('header');
-    let btnMobile = $('#btn-mobile');
-    let btnMobileClose = $('#btn-close');
-    const home =  $('#home');
-    const about = $('#about');
-    const contact = $('#contact');
+    let navbar      = $('#navbar');
+    let header      = $('header');
+    let btnMobile   = $('#btn-mobile');
+
+    const home      =  $('#home');
+    const about     = $('#about');
+    const contact   = $('#contact');
     const portfolio = $('#portfolio');
 
     $('section').hide();
@@ -64,18 +64,13 @@ function navbar() {
 
     btnMobile.on('click', function () {
         $(this).toggleClass('show')
-        navbar.addClass('show');
-        header.addClass('show')
-    })
-
-    btnMobileClose.on('click', function () {
-        navbar.removeClass('show');
-        header.removeClass('show');
+        navbar.toggleClass('show');
+        header.toggleClass('show');
     })
 
     $('.nav-link').on('click', function(e) {
         let dataLink = $(this).data('link')
-        let $loader = $('.loader');
+        let $loader  = $('.loader');
 
 
 
