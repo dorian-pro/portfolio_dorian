@@ -715,3 +715,115 @@ section{
     font-size: 18px;
     z-index: 5;
 }
+
+/* section skills */
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-content{
+    height: auto;
+    display: flex;
+    width: 100%;
+    margin: 25px auto 81px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.group-bar{
+    height: auto;
+    max-width: 860px;
+    min-width: 500px;
+    width: 100%;
+    position: relative;
+    color: whitesmoke;
+    padding: 1.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.label{
+    height: auto;
+    width: 45%;
+    position: relative;
+    color: whitesmoke;
+    display: inline-block;
+    padding: 1.5%;
+    text-transform: uppercase;
+}
+
+.progress-bar{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    transition: all .4s ease;
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(93, 0, 0, 0.51);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.3px);
+    -webkit-backdrop-filter: blur(8.3px);
+    border: 1px solid rgba(93, 0, 0, 1);
+}
+
+.progress-bar::before{
+    content: "";
+    background: var(--red-primary);
+    border-radius: 10px;
+    margin-left: 1px;
+    height: 95%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--raleway);
+}
+
+.progress-bar.html::before{
+    content: "80%";
+    width: 80%;
+}
+
+.progress-bar.js::before{
+    content: "50%";
+    width: 50%;
+}
+
+.progress-bar.jquery::before{
+    content: "50%";
+    width: 50%;
+}
+
+.progress-bar.php::before{
+    content: "70%";
+    width: 70%;
+}
+
+.progress-bar.php::before{
+    content: "70%";
+    width: 70%;
+}
+
+.progress-bar.sql::before{
+    content: "50%";
+    width: 50%;
+}
+
+.progress-bar.symfony::before{
+    content: "60%";
+    width: 60%;
+}
+
+.progress-bar.wordpress::before{
+    content: "30%";
+    width: 30%;
+}
+
+.progress-bar.bootstrap::before{
+    content: "70%";
+    width: 70%;
+}
