@@ -64,6 +64,29 @@ body {
     color: var(--red-primary);
 }
 
+
+.block-title{
+    height: auto;
+    width: fit-content;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-family: raleway, sans-serif;
+    color: whitesmoke;
+    padding: 60px 10px 30px;
+    font-weight: 900;
+    text-transform: capitalize;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.block-title.show{
+    z-index: 4;
+}
+
 /*---------  scroll-bar   ---------*/
 ::-webkit-scrollbar {
     width: 4px;
@@ -462,27 +485,6 @@ section{
     overflow: scroll;
 }
 
-#about .block-title{
-    height: auto;
-    width: fit-content;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-size: 45px;
-    font-family: raleway, sans-serif;
-    color: whitesmoke;
-    padding: 60px 10px 30px;
-    font-weight: 900;
-    text-transform: capitalize;
-    z-index: 2;
-    position: relative;
-    display: flex;
-}
-
-#about .block-title.show{
-   z-index: 4;
-}
-
 .about{
     height: 100vh;
     display: flex;
@@ -826,4 +828,145 @@ section{
 .progress-bar.bootstrap::before{
     content: "70%";
     width: 70%;
+}
+
+/* section portfolio */
+#portfolio .container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#portfolio .block-title span.text{
+    opacity: .8;
+    display: block;
+    font-size: 20px;
+    font-family: var(--raleway);
+    padding: 15px 8px 8px;
+    color: whitesmoke;
+    font-weight: 400;
+}
+
+#portfolio .portfolio-content{
+    width: 100%;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.portfolio-content .card{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 2% 40px 1.5%;
+}
+
+.portfolio-content .card .card-image{
+    height: 500px;
+    width: 40%;
+}
+
+.portfolio-content .card .card-image img{
+    height: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.portfolio-content .figure-body{
+    width: 40%;
+    padding-left: 1%;
+    margin: 160px 1% 1% -40px;
+    z-index: 2;
+    opacity: 1;
+    background: #080808;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.figure-body .card-title{
+    font-size: 35px;
+    font-weight: 200;
+    transition: all .4s ease;
+}
+
+.figure-body .block-badge{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.block-badge .badge{
+    background: rgba(134, 0, 0, 0.36);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(134, 0, 0, 1);
+    padding: 7px 10px;
+    font-size: 14px;
+}
+
+.figure-body span{
+    font-size: 16px;
+    opacity: .8;
+    font-weight: 200;
+}
+
+.figure-body .block-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.figure-body .btn{
+    font-size: 16px;
+    opacity: .8;
+    font-weight: 200;
+    padding: 10px 20px;
+    background: transparent;
+    color: #c70039;
+    transition: all .4s ease;
+    outline: none;
+    margin: 10px;
+    border: 1.5px solid #c70039;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: all .4s ease;
+}
+
+.figure-body .text-btn{
+    z-index: 3;
+    position: relative;
+}
+
+.figure-body .btn:before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 200%;
+    transform: rotate(-15deg) translateY(-20px);
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: #c70039;
+    transition: all .7s ease;
+}
+
+.figure-body .btn:hover:before{
+    opacity: 1;
+    width: 120%;
+}
+
+.figure-body .btn:hover{
+    opacity: 1;
+    color: whitesmoke;
 }

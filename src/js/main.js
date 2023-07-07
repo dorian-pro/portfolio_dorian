@@ -58,18 +58,11 @@ function navbar() {
     const about     = $('#about');
     const contact   = $('#contact');
     const portfolio = $('#portfolio');
-    const blockTitle = $("#about .block-title");
+    const blockTitle = $(".block-title");
 
     $('section').hide();
     home.show();
 
-    // if (header.hasClass('show')){
-    //
-    // } else if (!header.hasClass('show')) {
-    //     blockTitle.addClass('show')
-    // } else {
-    //
-    // }
     blockTitle.addClass('show')
     btnMobile.on('click', function () {
         $(this).toggleClass('show')
