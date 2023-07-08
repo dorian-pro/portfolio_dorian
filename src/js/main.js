@@ -1,5 +1,3 @@
-import AOS from 'aos';
-
 const Typed = require('typed.js');
 const $ = require('jquery');
 
@@ -12,7 +10,7 @@ $(window).on('load', function () {
 $(function () {
     navbar();
     home();
-    AOS.init();
+    validateForm()
 })
 
 function counter() {
@@ -157,6 +155,84 @@ function home() {
         shuffle: false, // Désactive le mélange des phrases
     });
 }
+
+function validateForm() {
+    // Validation du formulaire en temps réel
+    $('#name').on('input', function() {
+        let name = $(this).val();
+        if (name.trim() === '' || name.length <= 2) {
+            if (!$(this).hasClass('is-invalid')) {
+                $(this).removeClass('valid').addClass('is-invalid');
+                $(this).after('<span class="is-invalid">Veuillez renseigner votre nom et prénom</span>');
+            }
+        } else {
+            $(this).removeClass('is-invalid').addClass('valid');
+            $(this).next('.is-invalid').remove();
+        }
+    });
+
+    $('#subject').on('input', function() {
+        let subject = $(this).val();
+        if (subject.trim() === '' || subject.length <= 2) {
+            if (!$(this).hasClass('is-invalid')) {
+                $(this).removeClass('valid').addClass('is-invalid');
+                $(this).after('<span class="is-invalid">Pour quelle raison me contactez-vous ?</span>');
+            }
+        } else {
+            $(this).removeClass('is-invalid').addClass('valid');
+            $(this).next('.is-invalid').remove();
+        }
+    });
+
+    $('#email').on('input', function() {
+        let email = $(this).val();
+        let emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+        if (email.trim() === '' || !emailRegex.test(email)) {
+            if (!$(this).hasClass('is-invalid')) {
+                $(this).removeClass('valid').addClass('is-invalid');
+                $(this).after('<span class="is-invalid">Adresse email invalide !</span>');
+            }
+        } else {
+            $(this).removeClass('is-invalid').addClass('valid');
+            $(this).next('.is-invalid').remove();
+        }
+    });
+
+    $('#message').on('input', function() {
+        let message = $(this).val();
+        if (message.trim() === '' || message.length <= 10) {
+            if (!$(this).hasClass('is-invalid')) {
+                $(this).removeClass('valid').addClass('is-invalid');
+                $(this).after('<span class="is-invalid">Ce champ est obligatoire !</span>');
+            }
+        } else {
+            $(this).removeClass('is-invalid').addClass('valid');
+            $(this).next('.is-invalid').remove();
+        }
+    });
+
+    // Soumission du formulaire
+    $('.form').on('submit', function(event) {
+        event.preventDefault();
+
+        let isValid = true;
+
+        // Vérifier si tous les champs sont valides
+        $('.form input, .form textarea').each(function() {
+            if ($(this).val().trim() === '') {
+                isValid = false;
+                $(this).removeClass('valid').addClass('is-invalid');
+            }
+        });
+
+        if (isValid) {
+            // Envoyer le formulaire
+            $(this).off('submit').submit();
+        }
+    });
+}
+
+
 
 
 

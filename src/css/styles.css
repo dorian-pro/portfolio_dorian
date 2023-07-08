@@ -86,6 +86,20 @@ body {
     display: none;
 }
 
+.valid{
+    color: green;
+    border: 1px solid green;
+}
+
+.is-invalid:not(span.is-invalid){
+    color: red;
+    border: 1px solid red;
+}
+
+span.is-invalid{
+    color: red;
+}
+
 /*---------  scroll-bar   ---------*/
 ::-webkit-scrollbar {
     width: 4px;

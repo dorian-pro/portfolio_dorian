@@ -22,12 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $corpsMessage .= "<p><strong>E-mail :</strong> $email</p>";
     $corpsMessage .= "<p><strong>Message :</strong><br>$message</p>";
     $corpsMessage .= "</body></html>";
-
-    // Envoi du message
-    if (mail($destinataire, $sujet, $corpsMessage, $headers)) {
-        echo "E-mail envoyé avec succès.";
-    } else {
-        echo "Échec de l'envoi de l'e-mail.";
-    }
+    mail($destinataire, $sujet, $corpsMessage, $headers);
+//    // Envoi du message
+//    if (mail($destinataire, $sujet, $corpsMessage, $headers)) {
+//        echo "E-mail envoyé avec succès.";
+//    } else {
+//        echo "Échec de l'envoi de l'e-mail.";
+//    }
 }
 
