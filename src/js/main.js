@@ -1,3 +1,5 @@
+import AOS from 'aos';
+
 const Typed = require('typed.js');
 const $ = require('jquery');
 
@@ -10,6 +12,7 @@ $(window).on('load', function () {
 $(function () {
     navbar();
     home();
+    AOS.init();
 })
 
 function counter() {
@@ -63,12 +66,12 @@ function navbar() {
     $('section').hide();
     home.show();
 
-    blockTitle.addClass('show')
+    // blockTitle.addClass('show')
     btnMobile.on('click', function () {
         $(this).toggleClass('show')
         navbar.toggleClass('show');
         header.toggleClass('show');
-        blockTitle.toggleClass('show')
+        // blockTitle.toggleClass('show')
     })
 
     $('.nav-link').on('click', function(e) {
@@ -91,7 +94,7 @@ function navbar() {
                 case '#about':
                     about.fadeIn('100')
                     contact.fadeOut('medium')
-                    header.css('background', '#101010')
+                    // header.css('background', '#101010')
                     home.fadeOut('medium')
                     portfolio.fadeOut('medium')
                     break;
@@ -100,14 +103,14 @@ function navbar() {
                     about.fadeOut('medium')
                     contact.fadeOut('medium')
                     home.fadeOut('medium')
-                    header.css('background', '#101010')
+                    // header.css('background', '#101010')
                     break;
                 case '#contact':
                     contact.fadeIn('100')
                     about.fadeOut('medium')
                     home.fadeOut('medium')
                     portfolio.fadeOut('medium')
-                    header.css('background', '#101010')
+                    // header.css('background', '#101010')
                     break;
                 default:
                     home.fadeIn('100')
