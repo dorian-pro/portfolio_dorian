@@ -1,33 +1,43 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Récupérer les données du formulaire
-    $nom = $_POST["name"];
-    $email = $_POST["email"];
-    $subject = $_POST["subject"];
-    $message = $_POST["message"];
 
-    // Paramètres du message
-    $destinataire = 'pro.dorianm@dorianmarechal.com'; // Adresse e-mail du destinataire
-    $sujet = $subject;
-    $expediteur = $email;
-    $headers = "From: $expediteur\r\n";
-    $headers .= "Reply-To: $expediteur\r\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html; charset=utf-8\r\n";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    // Construction du corps du message
-    $corpsMessage = "<html><body>";
-    $corpsMessage .= "<h1>$sujet</h1>";
-    $corpsMessage .= "<p><strong>Nom :</strong> $nom</p>";
-    $corpsMessage .= "<p><strong>E-mail :</strong> $email</p>";
-    $corpsMessage .= "<p><strong>Message :</strong><br>$message</p>";
-    $corpsMessage .= "</body></html>";
-    mail($destinataire, $sujet, $corpsMessage, $headers);
-//    // Envoi du message
-//    if (mail($destinataire, $sujet, $corpsMessage, $headers)) {
-//        echo "E-mail envoyé avec succès.";
-//    } else {
-//        echo "Échec de l'envoi de l'e-mail.";
-//    }
+require 'phpmailer/PHPMailer-master/src/Exception.php';
+require 'phpmailer/PHPMailer-master/src/PHPMailer.php';
+require 'phpmailer/PHPMailer-master/src/SMTP.php';
+
+if(isset($_POST['send'])){
+    $to = "pro.dorianm@gmail.com";
+    $subject = $_POST['subject'];
+    $name = $_POST['name'];
+    $from = $_POST['email'];
+    $msg = $_POST['message'];
+    $subMsg = 'address email de l\'expediteur '. $from;
+
+    if(isset($_POST['email']) && isset($_POST['message']) && isset($_POST['name'])) {
+        try {
+            $mail = new PHPMailer;
+            $mail->isSMTP();
+            $mail->Host ='smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'pro.dorianm@gmail.com';
+            $mail->Password = 'azkccyczbrqywtkl';
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+            $mail->setFrom($from);
+            $mail->addAddress($to);
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body = $msg. $subMsg . $name;
+            $mail->send();
+            header('Location: https://dorianmarechal.com/?#contact');
+            exit();
+        } catch (Exception $e) {
+            $error_msg = $e->getMessage();
+            // TODO: REDIRIGER VERS UNE PAGE D ERREUR
+            exit();
+        }
+
+    }
 }
-

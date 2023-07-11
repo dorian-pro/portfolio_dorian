@@ -172,19 +172,6 @@ function validateForm() {
         }
     });
 
-    $('#subject').on('input', function() {
-        let subject = $(this).val();
-        if (subject.trim() === '' || subject.length <= 2) {
-            if (!$(this).hasClass('is-invalid')) {
-                $(this).removeClass('valid').addClass('is-invalid');
-                $(this).after('<span class="is-invalid">Pour quelle raison me contactez-vous ?</span>');
-            }
-        } else {
-            $(this).removeClass('is-invalid').addClass('valid');
-            $(this).next('.is-invalid').remove();
-        }
-    });
-
     $('#email').on('input', function() {
         let email = $(this).val();
         let emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
