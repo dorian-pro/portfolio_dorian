@@ -58,6 +58,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     background-color: var(--black);
+    position: relative;
 }
 
 .text-red{
@@ -119,6 +120,20 @@ span.is-invalid{
     background: var(--black);
     border-radius: 4px;
     width: 4px;
+}
+
+/*---------  cursor  ---------*/
+.cursor{
+    z-index: 999;
+    background: var(--red-primary);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    box-shadow: 0 0 20px var(--red-primary),
+    0 0 60px var(--red-primary),
+    0 0 100px var(--red-primary);
 }
 
 /*---------  loader load page  ---------*/

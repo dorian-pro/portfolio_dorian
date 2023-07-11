@@ -8,6 +8,7 @@ $(window).on('load', function () {
 })
 
 $(function () {
+    cursor();
     navbar();
     home();
     validateForm()
@@ -230,6 +231,25 @@ function validateForm() {
             $(this).off('submit').submit();
         }
     });
+}
+
+function cursor() {
+    const cursor = $('.cursor');
+
+    let $mouseX = 0, $mouseY = 0;
+    let $xp = 0, $yp =0;
+
+    $(document).mousemove(function(e){
+        $mouseX = e.pageX;
+        $mouseY = e.pageY;
+    });
+
+    let $loop = setInterval(function(){
+// change 12 to alter damping higher is slower
+        $xp += (($mouseX - $xp)/12);
+        $yp += (($mouseY - $yp)/12);
+        cursor.css({left:$xp +'px', top:$yp +'px'});
+    }, 30);
 }
 
 
