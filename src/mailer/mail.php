@@ -31,6 +31,7 @@ function sendEmail($recipient, $subject, $content, $name) {
 
         // Send the email
         $mail->send();
+        header('Location: https://dorianmarechal.com');
         return true;
     } catch (Exception $e) {
         return false;

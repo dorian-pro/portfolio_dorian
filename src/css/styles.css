@@ -87,7 +87,7 @@ body {
     display: none;
 }
 
-.valid{
+.valid:not(#subject.valid){
     color: green;
     border: 1px solid green;
 }
